@@ -1,2 +1,9 @@
-<h1>Billboards#show</h1>
-<p>Find me in app/views/billboards/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @billboard.category %>
+</p>
+
+<%= link_to 'Edit', edit_billboard_path(@billboard) %> |
+<%= link_to 'Back', billboards_path %>

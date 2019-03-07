@@ -86,3 +86,633 @@ Processing by BillboardsController#index as HTML
 Completed 200 OK in 391ms (Views: 379.1ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (154.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Billboard_project_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (134.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Billboard_project_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (378.7ms)[0m  [1m[35mCREATE DATABASE "Billboard_project_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (259.8ms)[0m  [1m[35mCREATE DATABASE "Billboard_project_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (2.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "billboards" CASCADE[0m
+  ↳ db/schema.rb:24
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "billboards" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs" CASCADE[0m
+  ↳ db/schema.rb:30
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "title" character varying, "album" character varying, "year" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190306060722)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190306055453),
+(20190306052122);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-03-07 05:28:28.537693"], ["updated_at", "2019-03-07 05:28:28.537693"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "billboards" CASCADE[0m
+  ↳ db/schema.rb:24
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "billboards" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs" CASCADE[0m
+  ↳ db/schema.rb:30
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "title" character varying, "album" character varying, "year" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190306060722)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190306055453),
+(20190306052122);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-03-07 05:28:28.612869"], ["updated_at", "2019-03-07 05:28:28.612869"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (1.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-03-07 05:28:28.617282"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2019-03-06 22:39:41 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.2) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.2) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateBillboards (20190307053633)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "billboards" ("id" bigserial primary key, "category" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190307053633_create_billboards.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE "Billboard_project_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE DATABASE "Billboard_project_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (134.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Billboard_project_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (134.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Billboard_project_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (291.4ms)[0m  [1m[35mCREATE DATABASE "Billboard_project_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (289.6ms)[0m  [1m[35mCREATE DATABASE "Billboard_project_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "billboards" CASCADE[0m
+  ↳ db/schema.rb:24
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "billboards" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs" CASCADE[0m
+  ↳ db/schema.rb:30
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "title" character varying, "album" character varying, "year" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190306060722)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-03-07 05:42:05.435637"], ["updated_at", "2019-03-07 05:42:05.435637"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "billboards" CASCADE[0m
+  ↳ db/schema.rb:24
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "billboards" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs" CASCADE[0m
+  ↳ db/schema.rb:30
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "title" character varying, "album" character varying, "year" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190306060722)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-03-07 05:42:05.522511"], ["updated_at", "2019-03-07 05:42:05.522511"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-03-07 05:42:05.528467"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateBillboards (20190307053633)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "billboards" ("id" bigserial primary key, "category" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190307053633_create_billboards.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (149.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Billboard_project_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (135.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Billboard_project_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (286.6ms)[0m  [1m[35mCREATE DATABASE "Billboard_project_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (307.8ms)[0m  [1m[35mCREATE DATABASE "Billboard_project_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "billboards" CASCADE[0m
+  ↳ db/schema.rb:24
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "billboards" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs" CASCADE[0m
+  ↳ db/schema.rb:30
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "title" character varying, "album" character varying, "year" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190306060722)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-03-07 05:42:19.612562"], ["updated_at", "2019-03-07 05:42:19.612562"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "billboards" CASCADE[0m
+  ↳ db/schema.rb:24
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "billboards" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs" CASCADE[0m
+  ↳ db/schema.rb:30
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "title" character varying, "album" character varying, "year" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190306060722)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-03-07 05:42:19.705475"], ["updated_at", "2019-03-07 05:42:19.705475"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-03-07 05:42:19.709911"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (136.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Billboard_project_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (134.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Billboard_project_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (261.6ms)[0m  [1m[35mCREATE DATABASE "Billboard_project_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (258.1ms)[0m  [1m[35mCREATE DATABASE "Billboard_project_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateBillboards (20190307053633)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "billboards" ("id" bigserial primary key, "category" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190307053633_create_billboards.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190307053633"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-03-07 05:42:59.565561"], ["updated_at", "2019-03-07 05:42:59.565561"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2019-03-06 22:43:15 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by BillboardsController#index as HTML
+  Rendering billboards/index.html.erb within layouts/application
+  [1m[36mBillboard Load (0.7ms)[0m  [1m[34mSELECT "billboards".* FROM "billboards"[0m
+  ↳ app/views/billboards/index.html.erb:14
+  Rendered billboards/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 280ms (Views: 267.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/billboards/new" for 127.0.0.1 at 2019-03-06 22:43:56 -0700
+Processing by BillboardsController#new as HTML
+  Rendering billboards/new.html.erb within layouts/application
+  Rendered billboards/_form.html.erb (32.1ms)
+  Rendered billboards/new.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 67ms (Views: 52.1ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/billboards" for 127.0.0.1 at 2019-03-06 22:44:04 -0700
+Processing by BillboardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Twb0n3E/ffEtLOdr21aYEo2gz4bHMvZk4uGz0sr2893IPOCT51R3LFhcHjHADwEuCfQwdgvuw7S7jM27WBYr3w==", "billboard"=>{"category"=>"Top 100 US"}, "commit"=>"Create Billboard"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/billboards_controller.rb:30
+  [1m[36mBillboard Create (1.8ms)[0m  [1m[32mINSERT INTO "billboards" ("category", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category", "Top 100 US"], ["created_at", "2019-03-07 05:44:04.849844"], ["updated_at", "2019-03-07 05:44:04.849844"]]
+  ↳ app/controllers/billboards_controller.rb:30
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/billboards_controller.rb:30
+Redirected to http://localhost:3000/billboards/1
+Completed 302 Found in 7ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/billboards/1" for 127.0.0.1 at 2019-03-06 22:44:04 -0700
+Processing by BillboardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBillboard Load (0.3ms)[0m  [1m[34mSELECT  "billboards".* FROM "billboards" WHERE "billboards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/billboards_controller.rb:67
+  Rendering billboards/show.html.erb within layouts/application
+  Rendered billboards/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 25ms (Views: 20.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/billboards" for 127.0.0.1 at 2019-03-06 22:44:07 -0700
+Processing by BillboardsController#index as HTML
+  Rendering billboards/index.html.erb within layouts/application
+  [1m[36mBillboard Load (0.4ms)[0m  [1m[34mSELECT "billboards".* FROM "billboards"[0m
+  ↳ app/views/billboards/index.html.erb:14
+  Rendered billboards/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 27ms (Views: 22.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/billboards/new" for 127.0.0.1 at 2019-03-06 22:44:19 -0700
+Processing by BillboardsController#new as HTML
+  Rendering billboards/new.html.erb within layouts/application
+  Rendered billboards/_form.html.erb (1.8ms)
+  Rendered billboards/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 30ms (Views: 27.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/billboards" for 127.0.0.1 at 2019-03-06 22:44:26 -0700
+Processing by BillboardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lgGcMWMmceAp2nN1sFsjrR8CVes7Qga7VqZIDaVk8RERO4g99U17PVyqii+rArqRm1aqG/eeM2sPyzZkN4QpEw==", "billboard"=>{"category"=>"Top 100 Euro"}, "commit"=>"Create Billboard"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/billboards_controller.rb:30
+  [1m[36mBillboard Create (0.4ms)[0m  [1m[32mINSERT INTO "billboards" ("category", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category", "Top 100 Euro"], ["created_at", "2019-03-07 05:44:26.775928"], ["updated_at", "2019-03-07 05:44:26.775928"]]
+  ↳ app/controllers/billboards_controller.rb:30
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/billboards_controller.rb:30
+Redirected to http://localhost:3000/billboards/2
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/billboards/2" for 127.0.0.1 at 2019-03-06 22:44:26 -0700
+Processing by BillboardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBillboard Load (0.4ms)[0m  [1m[34mSELECT  "billboards".* FROM "billboards" WHERE "billboards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/billboards_controller.rb:67
+  Rendering billboards/show.html.erb within layouts/application
+  Rendered billboards/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 39ms (Views: 35.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/billboards" for 127.0.0.1 at 2019-03-06 22:44:36 -0700
+Processing by BillboardsController#index as HTML
+  Rendering billboards/index.html.erb within layouts/application
+  [1m[36mBillboard Load (0.4ms)[0m  [1m[34mSELECT "billboards".* FROM "billboards"[0m
+  ↳ app/views/billboards/index.html.erb:14
+  Rendered billboards/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 33ms (Views: 27.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/billboards/new" for 127.0.0.1 at 2019-03-06 22:44:39 -0700
+Processing by BillboardsController#new as HTML
+  Rendering billboards/new.html.erb within layouts/application
+  Rendered billboards/_form.html.erb (2.1ms)
+  Rendered billboards/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 33ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/billboards" for 127.0.0.1 at 2019-03-06 22:44:51 -0700
+Processing by BillboardsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rOynZZdlfLXFcwGYnvyglcCyERj/0vy0xzRgi33MHGMr1rNpAQ52aLAD+MKFpTmpRObu6DMOyWSeWR7i7yzEYQ==", "billboard"=>{"category"=>"Top 50 World"}, "commit"=>"Create Billboard"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/billboards_controller.rb:30
+  [1m[36mBillboard Create (0.7ms)[0m  [1m[32mINSERT INTO "billboards" ("category", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["category", "Top 50 World"], ["created_at", "2019-03-07 05:44:51.662070"], ["updated_at", "2019-03-07 05:44:51.662070"]]
+  ↳ app/controllers/billboards_controller.rb:30
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/billboards_controller.rb:30
+Redirected to http://localhost:3000/billboards/3
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/billboards/3" for 127.0.0.1 at 2019-03-06 22:44:51 -0700
+Processing by BillboardsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBillboard Load (0.3ms)[0m  [1m[34mSELECT  "billboards".* FROM "billboards" WHERE "billboards"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/billboards_controller.rb:67
+  Rendering billboards/show.html.erb within layouts/application
+  Rendered billboards/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 26ms (Views: 22.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/billboards" for 127.0.0.1 at 2019-03-06 22:44:54 -0700
+Processing by BillboardsController#index as HTML
+  Rendering billboards/index.html.erb within layouts/application
+  [1m[36mBillboard Load (0.5ms)[0m  [1m[34mSELECT "billboards".* FROM "billboards"[0m
+  ↳ app/views/billboards/index.html.erb:14
+  Rendered billboards/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 30ms (Views: 24.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/billboards/1" for 127.0.0.1 at 2019-03-06 22:45:05 -0700
+Processing by BillboardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBillboard Load (0.9ms)[0m  [1m[34mSELECT  "billboards".* FROM "billboards" WHERE "billboards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/billboards_controller.rb:67
+  Rendering billboards/show.html.erb within layouts/application
+  Rendered billboards/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 36ms (Views: 28.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/billboards" for 127.0.0.1 at 2019-03-06 22:45:14 -0700
+Processing by BillboardsController#index as HTML
+  Rendering billboards/index.html.erb within layouts/application
+  [1m[36mBillboard Load (0.5ms)[0m  [1m[34mSELECT "billboards".* FROM "billboards"[0m
+  ↳ app/views/billboards/index.html.erb:14
+  Rendered billboards/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 48ms (Views: 44.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/billboards/1/edit" for 127.0.0.1 at 2019-03-06 22:49:37 -0700
+Processing by BillboardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBillboard Load (0.5ms)[0m  [1m[34mSELECT  "billboards".* FROM "billboards" WHERE "billboards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/billboards_controller.rb:67
+  Rendering billboards/edit.html.erb within layouts/application
+  Rendered billboards/_form.html.erb (2.6ms)
+  Rendered billboards/edit.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 37ms (Views: 30.5ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/billboards/1" for 127.0.0.1 at 2019-03-06 22:49:49 -0700
+Processing by BillboardsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O44/EAOeUXoShZboqqCNOOuQ6fSuBBXMQgh5+PDiyVaNTGQlhG/4MZ+NZqiJR2o626vpm/hmAzGaKm0tVC1pug==", "billboard"=>{"category"=>"Top 100 USA"}, "commit"=>"Update Billboard", "id"=>"1"}
+  [1m[36mBillboard Load (0.5ms)[0m  [1m[34mSELECT  "billboards".* FROM "billboards" WHERE "billboards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/billboards_controller.rb:67
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/billboards_controller.rb:44
+  [1m[36mBillboard Update (0.6ms)[0m  [1m[33mUPDATE "billboards" SET "category" = $1, "updated_at" = $2 WHERE "billboards"."id" = $3[0m  [["category", "Top 100 USA"], ["updated_at", "2019-03-07 05:49:49.409299"], ["id", 1]]
+  ↳ app/controllers/billboards_controller.rb:44
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/billboards_controller.rb:44
+Redirected to http://localhost:3000/billboards/1
+Completed 302 Found in 8ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/billboards/1" for 127.0.0.1 at 2019-03-06 22:49:49 -0700
+Processing by BillboardsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBillboard Load (0.3ms)[0m  [1m[34mSELECT  "billboards".* FROM "billboards" WHERE "billboards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/billboards_controller.rb:67
+  Rendering billboards/show.html.erb within layouts/application
+  Rendered billboards/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 29ms (Views: 24.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/billboards/1/edit" for 127.0.0.1 at 2019-03-06 22:49:58 -0700
+Processing by BillboardsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBillboard Load (0.8ms)[0m  [1m[34mSELECT  "billboards".* FROM "billboards" WHERE "billboards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/billboards_controller.rb:67
+  Rendering billboards/edit.html.erb within layouts/application
+  Rendered billboards/_form.html.erb (1.5ms)
+  Rendered billboards/edit.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 37ms (Views: 30.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/billboards" for 127.0.0.1 at 2019-03-06 22:50:02 -0700
+Processing by BillboardsController#index as HTML
+  Rendering billboards/index.html.erb within layouts/application
+  [1m[36mBillboard Load (0.4ms)[0m  [1m[34mSELECT "billboards".* FROM "billboards"[0m
+  ↳ app/views/billboards/index.html.erb:14
+  Rendered billboards/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 43ms (Views: 36.6ms | ActiveRecord: 0.4ms)
+
+

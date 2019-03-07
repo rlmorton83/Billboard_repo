@@ -1,24 +1,48 @@
 require 'test_helper'
 
 class BillboardsControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get billboards_index_url
-    assert_response :success
+  setup do
+    @billboard = billboards(:one)
   end
 
-  test "should get show" do
-    get billboards_show_url
+  test "should get index" do
+    get billboards_url
     assert_response :success
   end
 
   test "should get new" do
-    get billboards_new_url
+    get new_billboard_url
+    assert_response :success
+  end
+
+  test "should create billboard" do
+    assert_difference('Billboard.count') do
+      post billboards_url, params: { billboard: { category: @billboard.category } }
+    end
+
+    assert_redirected_to billboard_url(Billboard.last)
+  end
+
+  test "should show billboard" do
+    get billboard_url(@billboard)
     assert_response :success
   end
 
   test "should get edit" do
-    get billboards_edit_url
+    get edit_billboard_url(@billboard)
     assert_response :success
   end
 
+  test "should update billboard" do
+    patch billboard_url(@billboard), params: { billboard: { category: @billboard.category } }
+    assert_redirected_to billboard_url(@billboard)
+  end
+
+  test "should destroy billboard" do
+    assert_difference('Billboard.count', -1) do
+      delete billboard_url(@billboard)
+    end
+
+    assert_redirected_to billboards_url
+  end
 end
