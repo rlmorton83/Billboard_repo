@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  auth: MyString
+  proj: MyString
+  category: MyString
+
+two:
+  auth: MyString
+  proj: MyString
+  category: MyString

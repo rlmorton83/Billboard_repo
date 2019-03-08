@@ -1,0 +1,32 @@
+<%= form_with(model: rail, local: true) do |form| %>
+  <% if rail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rail.errors.count, "error") %> prohibited this rail from being saved:</h2>
+
+      <ul>
+      <% rail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :auth %>
+    <%= form.text_field :auth %>
+  </div>
+
+  <div class="field">
+    <%= form.label :proj %>
+    <%= form.text_field :proj %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

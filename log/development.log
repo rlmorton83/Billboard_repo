@@ -716,3 +716,885 @@ Processing by BillboardsController#index as HTML
 Completed 200 OK in 43ms (Views: 36.6ms | ActiveRecord: 0.4ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateArtists (20190307060625)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190307060625_create_artists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190307060625"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/billboards" for 127.0.0.1 at 2019-03-06 23:07:11 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by BillboardsController#index as HTML
+  Rendering billboards/index.html.erb within layouts/application
+  [1m[36mBillboard Load (0.5ms)[0m  [1m[34mSELECT "billboards".* FROM "billboards"[0m
+  ↳ app/views/billboards/index.html.erb:14
+  Rendered billboards/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 252ms (Views: 232.6ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/artist" for 127.0.0.1 at 2019-03-06 23:07:33 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/artist"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/artists" for 127.0.0.1 at 2019-03-06 23:07:44 -0700
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (2.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 37ms (Views: 25.7ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/artists/new" for 127.0.0.1 at 2019-03-06 23:07:47 -0700
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (3.2ms)
+  Rendered artists/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 42ms (Views: 24.4ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/artists" for 127.0.0.1 at 2019-03-06 23:07:58 -0700
+Processing by ArtistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4ZI+dkIVyE4R7GA0lvOnIR9S1F7IYsIqLZSXeYulOw/Ae7OlSBVxzEU3ZvHpkx5seeYXYu56gzTJNw+9Ig8dGA==", "artist"=>{"name"=>"Lady Gaga"}, "commit"=>"Create Artist"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artists_controller.rb:30
+  [1m[36mArtist Create (1.1ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Lady Gaga"], ["created_at", "2019-03-07 06:07:58.195822"], ["updated_at", "2019-03-07 06:07:58.195822"]]
+  ↳ app/controllers/artists_controller.rb:30
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artists_controller.rb:30
+Redirected to http://localhost:3000/artists/1
+Completed 302 Found in 8ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/artists/1" for 127.0.0.1 at 2019-03-06 23:07:58 -0700
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:67
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 44ms (Views: 36.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2019-03-06 23:08:00 -0700
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 31ms (Views: 26.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/artists/new" for 127.0.0.1 at 2019-03-06 23:08:02 -0700
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (1.9ms)
+  Rendered artists/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 32ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/artists" for 127.0.0.1 at 2019-03-06 23:08:13 -0700
+Processing by ArtistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A7drauVe8ATlhz+kEVCaASAON1PhmnuBu+7iSbN/AEkiXua5715JhrFcOWFuMCNMRrr0b8eCOp9fTXqNGtUmXg==", "artist"=>{"name"=>"Daddy Yankee"}, "commit"=>"Create Artist"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artists_controller.rb:30
+  [1m[36mArtist Create (0.8ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Daddy Yankee"], ["created_at", "2019-03-07 06:08:13.561794"], ["updated_at", "2019-03-07 06:08:13.561794"]]
+  ↳ app/controllers/artists_controller.rb:30
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artists_controller.rb:30
+Redirected to http://localhost:3000/artists/2
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/artists/2" for 127.0.0.1 at 2019-03-06 23:08:13 -0700
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:67
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2019-03-06 23:08:17 -0700
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 42ms (Views: 36.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/artists/new" for 127.0.0.1 at 2019-03-06 23:08:21 -0700
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (3.8ms)
+  Rendered artists/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/artists" for 127.0.0.1 at 2019-03-06 23:08:29 -0700
+Processing by ArtistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"24igvpGm2J0hqqPfYKRtoyp/nIV/GlBKcu4zR8QIjm/6YS1tm6ZhH3VxpRofxNTuTMtfuVkCEVSWTauDbaKoeA==", "artist"=>{"name"=>"Michael Jackson"}, "commit"=>"Create Artist"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artists_controller.rb:30
+  [1m[36mArtist Create (1.1ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Michael Jackson"], ["created_at", "2019-03-07 06:08:29.372976"], ["updated_at", "2019-03-07 06:08:29.372976"]]
+  ↳ app/controllers/artists_controller.rb:30
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artists_controller.rb:30
+Redirected to http://localhost:3000/artists/3
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/artists/3" for 127.0.0.1 at 2019-03-06 23:08:29 -0700
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:67
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2019-03-06 23:08:31 -0700
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 35ms (Views: 30.3ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateSongs (20190307061813)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "title" character varying, "album" character varying, "year" character varying, "artist_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190307061813_create_songs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190307061813"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRails (20190308015735)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "rails" ("id" bigserial primary key, "auth" character varying, "proj" character varying, "category" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190308015735_create_rails.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190308015735"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20190308020503)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying, "last_name" character varying, "user_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190308020503_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190308020503"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2019-03-07 21:52:36 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by BillboardsController#index as HTML
+  Rendering billboards/index.html.erb within layouts/application
+  [1m[36mBillboard Load (0.8ms)[0m  [1m[34mSELECT "billboards".* FROM "billboards"[0m
+  ↳ app/views/billboards/index.html.erb:14
+  Rendered billboards/index.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 347ms (Views: 323.8ms | ActiveRecord: 5.9ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddDeviseToUsers (20190308053316)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (5.3ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20190308053316_add_devise_to_users.rb:7
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20190308053316_add_devise_to_users.rb:8
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20190308053316_add_devise_to_users.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20190308053316_add_devise_to_users.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20190308053316_add_devise_to_users.rb:15
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20190308053316_add_devise_to_users.rb:40
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20190308053316_add_devise_to_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190308053316"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(5175739804650578625)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2019-03-07 22:40:25 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by BillboardsController#index as HTML
+  Rendering billboards/index.html.erb within layouts/application
+  [1m[36mBillboard Load (0.7ms)[0m  [1m[34mSELECT "billboards".* FROM "billboards"[0m
+  ↳ app/views/billboards/index.html.erb:14
+  Rendered billboards/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 2184ms (Views: 2162.8ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/billboards/2" for 127.0.0.1 at 2019-03-07 22:41:07 -0700
+Processing by BillboardsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBillboard Load (0.4ms)[0m  [1m[34mSELECT  "billboards".* FROM "billboards" WHERE "billboards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/billboards_controller.rb:67
+  Rendering billboards/show.html.erb within layouts/application
+  Rendered billboards/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 59ms (Views: 41.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/billboards" for 127.0.0.1 at 2019-03-07 22:41:10 -0700
+Processing by BillboardsController#index as HTML
+  Rendering billboards/index.html.erb within layouts/application
+  [1m[36mBillboard Load (0.5ms)[0m  [1m[34mSELECT "billboards".* FROM "billboards"[0m
+  ↳ app/views/billboards/index.html.erb:14
+  Rendered billboards/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 40ms (Views: 35.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/billboards/users" for 127.0.0.1 at 2019-03-07 22:42:27 -0700
+Processing by BillboardsController#show as HTML
+  Parameters: {"id"=>"users"}
+  [1m[36mBillboard Load (0.4ms)[0m  [1m[34mSELECT  "billboards".* FROM "billboards" WHERE "billboards"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/billboards_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Billboard with 'id'=users):
+  
+app/controllers/billboards_controller.rb:67:in `set_billboard'
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-03-07 22:42:43 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/sessions/new.html.erb within layouts/application (44.5ms)
+Completed 200 OK in 141ms (Views: 105.9ms | ActiveRecord: 7.3ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-03-07 22:43:08 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sA8G40meeiyT3iHesUKR00FE84eOO61+MRLM5qogAt5+qjopC+dTPYbBHvGngEHFg5BrOITIMpO3itryKmEQjA==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 8ms (ActiveRecord: 4.1ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sA8G40meeiyT3iHesUKR00FE84eOO61+MRLM5qogAt5+qjopC+dTPYbBHvGngEHFg5BrOITIMpO3itryKmEQjA==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/sessions/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 166ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-03-07 22:43:13 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.6.1/app/views/devise/registrations/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-03-07 22:43:28 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9kvLkLFJor9xgsN29ZCrj2ZMmhpHKpVn0sir/8wbZVIsJiBWs06535HA8X7dzM+WV2PMMVbSkrAOjw+CisFrEg==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (7.4ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-03-08 05:43:29.046007"], ["updated_at", "2019-03-08 05:43:29.046007"], ["email", "test@test.com"], ["encrypted_password", "$2a$11$gJw9f6BEoe5W0QWkgP7nHeMGKrdaT1k3govyQUroLDFcfGTSTR4vW"]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 138ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-07 22:43:29 -0700
+Processing by BillboardsController#index as HTML
+  Rendering billboards/index.html.erb within layouts/application
+  [1m[36mBillboard Load (0.3ms)[0m  [1m[34mSELECT "billboards".* FROM "billboards"[0m
+  ↳ app/views/billboards/index.html.erb:14
+  Rendered billboards/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 33ms (Views: 30.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-07 22:52:27 -0700
+  
+SyntaxError (/Users/robert_morton/Desktop/Billboard_project/Billboard_repo/app/controllers/application_controller.rb:3: syntax error, unexpected '<', expecting keyword_end
+    <a href="/billboards"> Billboa...
+    ^
+/Users/robert_morton/Desktop/Billboard_project/Billboard_repo/app/controllers/application_controller.rb:5: unknown regexp options - artt
+/Users/robert_morton/Desktop/Billboard_project/Billboard_repo/app/controllers/application_controller.rb:5: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+    <a href="/artists"> Artists</a>
+                     ^
+/Users/robert_morton/Desktop/Billboard_project/Billboard_repo/app/controllers/application_controller.rb:8: unterminated string meets end of file
+/Users/robert_morton/Desktop/Billboard_project/Billboard_repo/app/controllers/application_controller.rb:8: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/application_controller.rb:3: syntax error, unexpected '<', expecting keyword_end
+app/controllers/application_controller.rb:5: unknown regexp options - artt
+app/controllers/application_controller.rb:5: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+app/controllers/application_controller.rb:8: unterminated string meets end of file
+app/controllers/application_controller.rb:8: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/billboards_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2019-03-07 22:53:47 -0700
+Processing by BillboardsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering billboards/index.html.erb within layouts/application
+  [1m[36mBillboard Load (0.8ms)[0m  [1m[34mSELECT "billboards".* FROM "billboards"[0m
+  ↳ app/views/billboards/index.html.erb:14
+  Rendered billboards/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 82ms (Views: 50.6ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2019-03-07 22:53:56 -0700
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 44ms (Views: 29.8ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/billboards" for 127.0.0.1 at 2019-03-07 22:54:00 -0700
+Processing by BillboardsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering billboards/index.html.erb within layouts/application
+  [1m[36mBillboard Load (0.3ms)[0m  [1m[34mSELECT "billboards".* FROM "billboards"[0m
+  ↳ app/views/billboards/index.html.erb:14
+  Rendered billboards/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 32ms (Views: 27.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2019-03-07 22:54:02 -0700
+Processing by ArtistsController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:14
+  Rendered artists/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 42ms (Views: 33.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/billboards" for 127.0.0.1 at 2019-03-07 22:54:03 -0700
+Processing by BillboardsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering billboards/index.html.erb within layouts/application
+  [1m[36mBillboard Load (0.3ms)[0m  [1m[34mSELECT "billboards".* FROM "billboards"[0m
+  ↳ app/views/billboards/index.html.erb:14
+  Rendered billboards/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 47ms (Views: 38.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/billboards" for 127.0.0.1 at 2019-03-07 22:54:54 -0700
+Processing by BillboardsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering billboards/index.html.erb within layouts/application
+  [1m[36mBillboard Load (0.3ms)[0m  [1m[34mSELECT "billboards".* FROM "billboards"[0m
+  ↳ app/views/billboards/index.html.erb:14
+  Rendered billboards/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 50ms (Views: 44.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-03-07 22:54:56 -0700
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (1.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:17
+  Rendered songs/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 43ms (Views: 25.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2019-03-07 22:55:01 -0700
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (6.3ms)
+  Rendered songs/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 53ms (Views: 33.2ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2019-03-07 23:17:05 -0700
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (2.2ms)
+  Rendered songs/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 59ms (Views: 51.1ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2019-03-07 23:18:11 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SGXVNd9A9c2l7RabSgPOxyjJPNpfnKvMsQdZp0rjYt+GwOn/nTnc3LDyKbRcwR7R6h2kZVVvNCE3n0+zyqJwjQ==", "song"=>{"title"=>"PYT", "album"=>"Off the Wall", "year"=>"1985", "artist_id"=>"Michael Jackson"}, "commit"=>"Create Song"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:30
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (2.1ms)
+  Rendered songs/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 66ms (Views: 31.4ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2019-03-07 23:18:23 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4I/wDMNeJWw2McMBJA9g9roKkcvsRFli+bt5/WC0/5EuKszGgScMfSMu/C4yzbDgeN4JdOa3xo9/I2/p4PXtww==", "song"=>{"title"=>"PYT", "album"=>"Off the Wall", "year"=>"1985", "artist_id"=>"Michael Jackson"}, "commit"=>"Create Song"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:30
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/songs_controller.rb:30
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (2.1ms)
+  Rendered songs/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 41ms (Views: 33.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2019-03-07 23:23:16 -0700
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:17
+  Rendered songs/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 63ms (Views: 28.8ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2019-03-07 23:23:18 -0700
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (2.5ms)
+  Rendered songs/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 43ms (Views: 31.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2019-03-07 23:28:32 -0700
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (1.2ms)
+  Rendered songs/new.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 4.7ms)
+
+
+  
+SyntaxError (/Users/robert_morton/Desktop/Billboard_project/Billboard_repo/app/views/songs/_form.html.erb:33: syntax error, unexpected '<', expecting ')'
+  </div>
+  ^
+/Users/robert_morton/Desktop/Billboard_project/Billboard_repo/app/views/songs/_form.html.erb:37: unknown regexp options - dv
+/Users/robert_morton/Desktop/Billboard_project/Billboard_repo/app/views/songs/_form.html.erb:42: unterminated string meets end of file
+          end
+             ^
+/Users/robert_morton/Desktop/Billboard_project/Billboard_repo/app/views/songs/_form.html.erb:42: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^):
+  
+app/views/songs/_form.html.erb:33: syntax error, unexpected '<', expecting ')'
+app/views/songs/_form.html.erb:37: unknown regexp options - dv
+app/views/songs/_form.html.erb:42: unterminated string meets end of file
+app/views/songs/_form.html.erb:42: syntax error, unexpected end-of-input, expecting ')'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb___2956386241789059572_70169966353700'
+Started GET "/songs/new" for 127.0.0.1 at 2019-03-07 23:29:13 -0700
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (1.2ms)
+  Rendered songs/new.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/Users/robert_morton/Desktop/Billboard_project/Billboard_repo/app/views/songs/_form.html.erb:33: syntax error, unexpected '<', expecting ')'
+  </div>
+  ^
+/Users/robert_morton/Desktop/Billboard_project/Billboard_repo/app/views/songs/_form.html.erb:37: unknown regexp options - dv
+/Users/robert_morton/Desktop/Billboard_project/Billboard_repo/app/views/songs/_form.html.erb:42: unterminated string meets end of file
+          end
+             ^
+/Users/robert_morton/Desktop/Billboard_project/Billboard_repo/app/views/songs/_form.html.erb:42: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^):
+  
+app/views/songs/_form.html.erb:33: syntax error, unexpected '<', expecting ')'
+app/views/songs/_form.html.erb:37: unknown regexp options - dv
+app/views/songs/_form.html.erb:42: unterminated string meets end of file
+app/views/songs/_form.html.erb:42: syntax error, unexpected end-of-input, expecting ')'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb___2956386241789059572_70169950632980'
+Started GET "/songs/new" for 127.0.0.1 at 2019-03-07 23:32:25 -0700
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (1.1ms)
+  Rendered songs/new.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/Users/robert_morton/Desktop/Billboard_project/Billboard_repo/app/views/songs/_form.html.erb:33: syntax error, unexpected '<', expecting ')'
+  </div>
+  ^
+/Users/robert_morton/Desktop/Billboard_project/Billboard_repo/app/views/songs/_form.html.erb:37: unknown regexp options - dv
+/Users/robert_morton/Desktop/Billboard_project/Billboard_repo/app/views/songs/_form.html.erb:42: unterminated string meets end of file
+          end
+             ^
+/Users/robert_morton/Desktop/Billboard_project/Billboard_repo/app/views/songs/_form.html.erb:42: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^):
+  
+app/views/songs/_form.html.erb:33: syntax error, unexpected '<', expecting ')'
+app/views/songs/_form.html.erb:37: unknown regexp options - dv
+app/views/songs/_form.html.erb:42: unterminated string meets end of file
+app/views/songs/_form.html.erb:42: syntax error, unexpected end-of-input, expecting ')'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb___2956386241789059572_70169903791900'
+Started GET "/songs/new" for 127.0.0.1 at 2019-03-07 23:33:00 -0700
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (244.5ms)
+  Rendered songs/new.html.erb within layouts/application (246.4ms)
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fa37074aca0>:0x00007fa3706e17f0>):
+    28: 
+    29:   <div class="field">
+    30:     <%= form.label :artist_id %>
+    31:     <%= f.grouped_collection_select :artist_id, Artist.order(:name), @artists, :artists, :name, :id, :name %>
+    32:   </div>
+    33: 
+    34:   <div class="actions">
+  
+app/views/songs/_form.html.erb:31:in `block in _app_views_songs__form_html_erb__2819723865405602621_70169981276300'
+app/views/songs/_form.html.erb:1:in `_app_views_songs__form_html_erb__2819723865405602621_70169981276300'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb___2956386241789059572_70169971331200'
+Started GET "/songs/new" for 127.0.0.1 at 2019-03-07 23:33:36 -0700
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (19.0ms)
+  Rendered songs/new.html.erb within layouts/application (21.8ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :name:Symbol):
+    28: 
+    29:   <div class="field">
+    30:     <%= form.label :artist_id %>
+    31:     <%= form.grouped_collection_select :artist_id, Artist.order(:name), @artists, :artists, :name, :id, :name %>
+    32:   </div>
+    33: 
+    34:   <div class="actions">
+  
+app/views/songs/_form.html.erb:31:in `block in _app_views_songs__form_html_erb__2819723865405602621_70169950664240'
+app/views/songs/_form.html.erb:1:in `_app_views_songs__form_html_erb__2819723865405602621_70169950664240'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb___2956386241789059572_70169959178500'
+Started GET "/songs/new" for 127.0.0.1 at 2019-03-07 23:41:51 -0700
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (4.1ms)
+  Rendered songs/new.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 5.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :id:Symbol):
+    28: 
+    29:   <div class="field">
+    30:     <%= form.label :artist_id %>
+    31:     <%= form.grouped_collection_select :artist_id, Artist.order(:name), @artists, :artists, :name, :id, :id %>
+    32:   </div>
+    33: 
+    34:   <div class="actions">
+  
+app/views/songs/_form.html.erb:31:in `block in _app_views_songs__form_html_erb__2819723865405602621_70169967433640'
+app/views/songs/_form.html.erb:1:in `_app_views_songs__form_html_erb__2819723865405602621_70169967433640'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb___2956386241789059572_70169967490880'
+Started GET "/songs" for 127.0.0.1 at 2019-03-07 23:42:09 -0700
+Processing by SongsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:17
+  Rendered songs/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 57ms (Views: 49.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2019-03-07 23:42:13 -0700
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (5.2ms)
+  Rendered songs/new.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for :id:Symbol):
+    28: 
+    29:   <div class="field">
+    30:     <%= form.label :artist_id %>
+    31:     <%= form.grouped_collection_select :artist_id, Artist.order(:name), @artists, :artists, :name, :id, :id %>
+    32:   </div>
+    33: 
+    34:   <div class="actions">
+  
+app/views/songs/_form.html.erb:31:in `block in _app_views_songs__form_html_erb__2819723865405602621_70169944687080'
+app/views/songs/_form.html.erb:1:in `_app_views_songs__form_html_erb__2819723865405602621_70169944687080'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb___2956386241789059572_70169944806980'
+Started GET "/songs/new" for 127.0.0.1 at 2019-03-07 23:46:11 -0700
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (3.9ms)
+  Rendered songs/new.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 7, expected 1..4)):
+    28: 
+    29:   <div class="field">
+    30:     <%= form.label :artist_id %>
+    31:     <%= form.select :artist_id, Artist.order(:name), @artists, :artists, :name, :id, :id %>
+    32:   </div>
+    33: 
+    34:   <div class="actions">
+  
+app/views/songs/_form.html.erb:31:in `block in _app_views_songs__form_html_erb__2819723865405602621_70169969605560'
+app/views/songs/_form.html.erb:1:in `_app_views_songs__form_html_erb__2819723865405602621_70169969605560'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb___2956386241789059572_70169969637900'
+Started GET "/songs/new" for 127.0.0.1 at 2019-03-07 23:49:17 -0700
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/songs/_form.html.erb:31
+  Rendered songs/_form.html.erb (14.5ms)
+  Rendered songs/new.html.erb within layouts/application (16.5ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 6.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for [["Lady Gaga", 1], ["Daddy Yankee", 2], ["Michael Jackson", 3]]:Array):
+    28: 
+    29:   <div class="field">
+    30:     <%= form.label :artist_id %>
+    31:     <%= form.select('post', 'artist_id', Artist.all.collect{|p| [p.name, p.id]}, {prompt: 'Artist'}) %>
+    32:   </div>
+    33: 
+    34:   <div class="actions">
+  
+app/views/songs/_form.html.erb:31:in `block in _app_views_songs__form_html_erb__2819723865405602621_70169981273820'
+app/views/songs/_form.html.erb:1:in `_app_views_songs__form_html_erb__2819723865405602621_70169981273820'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb___2956386241789059572_70169971331820'
+Started GET "/songs/new" for 127.0.0.1 at 2019-03-07 23:50:29 -0700
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/songs/_form.html.erb:31
+  Rendered songs/_form.html.erb (6.1ms)
+  Rendered songs/new.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for [["Lady Gaga", 1], ["Daddy Yankee", 2], ["Michael Jackson", 3]]:Array):
+    28: 
+    29:   <div class="field">
+    30:     <%= form.label :artist_id %>
+    31:     <%= form.select("post", "artist_id", Artist.all.collect{|p| [p.name, p.id]}, {prompt: 'Artist'}) %>
+    32:   </div>
+    33: 
+    34:   <div class="actions">
+  
+app/views/songs/_form.html.erb:31:in `block in _app_views_songs__form_html_erb__2819723865405602621_70169964881560'
+app/views/songs/_form.html.erb:1:in `_app_views_songs__form_html_erb__2819723865405602621_70169964881560'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb___2956386241789059572_70169964947960'
+Started GET "/songs/new" for 127.0.0.1 at 2019-03-07 23:51:10 -0700
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (4.0ms)
+  Rendered songs/new.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `collect' for nil:NilClass):
+    28: 
+    29:   <div class="field">
+    30:     <%= form.label :artist_id %>
+    31:     <%= form.select("post", "artist_id", @artists.collect{|p| [p.name, p.id]}, {prompt: 'Artist'}) %>
+    32:   </div>
+    33: 
+    34:   <div class="actions">
+  
+app/views/songs/_form.html.erb:31:in `block in _app_views_songs__form_html_erb__2819723865405602621_70169984796780'
+app/views/songs/_form.html.erb:1:in `_app_views_songs__form_html_erb__2819723865405602621_70169984796780'
+app/views/songs/new.html.erb:3:in `_app_views_songs_new_html_erb___2956386241789059572_70169981135280'
+Started GET "/songs/new" for 127.0.0.1 at 2019-03-07 23:53:07 -0700
+Processing by SongsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/robert_morton/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/_form.html.erb (2.4ms)
+  Rendered songs/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 57ms (Views: 50.9ms | ActiveRecord: 0.9ms)
+
+

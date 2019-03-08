@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Auth:</strong>
+  <%= @rail.auth %>
+</p>
+
+<p>
+  <strong>Proj:</strong>
+  <%= @rail.proj %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @rail.category %>
+</p>
+
+<%= link_to 'Edit', edit_rail_path(@rail) %> |
+<%= link_to 'Back', rails_path %>
